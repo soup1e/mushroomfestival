@@ -119,7 +119,9 @@ function displayFriends() {
             // 1. No mushrooms, set a message to go hunt for more
             // 2. Friend is already fully satisfied (3), set a message to pick another friend
             // 3. Feed friend mushroom:
-
+            if (!mushrooms.length) {
+                message = 'GO GET SOME MUSHROOMS NOW!';
+            }
             // a. "pop" a mushroom off the mushrooms array
 
             // b. increase friend.satisfied by 1
