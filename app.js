@@ -121,6 +121,8 @@ function displayFriends() {
             // 3. Feed friend mushroom:
             if (!mushrooms.length) {
                 message = 'GO GET SOME MUSHROOMS NOW!';
+            } else if (friend.satisfied === 3) {
+                message = `${friend.name} ate too much! Pick a hungry Friend.`;
             }
             // a. "pop" a mushroom off the mushrooms array
 
