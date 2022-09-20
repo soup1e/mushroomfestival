@@ -123,13 +123,14 @@ function displayFriends() {
                 message = 'GO GET SOME MUSHROOMS NOW!';
             } else if (friend.satisfied === 3) {
                 message = `${friend.name} ate too much! Pick a hungry Friend.`;
-            }
-            // a. "pop" a mushroom off the mushrooms array
-
-            // b. increase friend.satisfied by 1
-
-            // c. set a message that the friend enjoyed the mushroom,
-            //    include the friend name and mushroom type in the message
+            } else {
+                // a. "pop" a mushroom off the mushrooms array
+                const mushroom = mushrooms.pop();
+                // b. increase friend.satisfied by 1
+                friend.satisfied++;
+                // c. set a message that the friend enjoyed the mushroom,
+                //    include the friend name and mushroom type in the message
+                message = `${friend.name} ate "${mushroom.type}"`;
 
             displayMessage();
             displayMushrooms();
