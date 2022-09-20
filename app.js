@@ -83,10 +83,12 @@ addFriendForm.addEventListener('submit', (e) => {
 sayGoodbyeButton.addEventListener('click', () => {
     const stillHungry = [];
     for (const friend of friends) {
+        // > if the friend is not fully satisfied, push
+        // them into the stillHungry array
+        if (friend.satisfied < 3) {
+            stillHungry.push(friend);
+        }
     }
-    // > if the friend is not fully satisfied, push
-    // them into the stillHungry array
-
     friends = stillHungry;
     displayFriends();
 });
@@ -131,7 +133,7 @@ function displayFriends() {
                 // c. set a message that the friend enjoyed the mushroom,
                 //    include the friend name and mushroom type in the message
                 message = `${friend.name} ate "${mushroom.type}"`;
-
+            }
             displayMessage();
             displayMushrooms();
             displayFriends();
